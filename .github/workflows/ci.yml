@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.x
@@ -14,6 +14,6 @@ jobs:
       - name: Install dependencies (if any)
         run: |
           python -m pip install --upgrade pip
-          # For this simple app, we don't have external dependencies
-      - name: Run a simple check
-        run: python calculator.py --version # Add a simple version check if you want
+          pip install unittest # Although unittest is built-in, let's be explicit
+      - name: Run unit tests
+        run: python -m unittest test_calculator.py
