@@ -31,4 +31,3 @@ def test_calculator_operations():
 if __name__ == "__main__":
     test_calculator_operations()
     print("Simple integration tests passed.")
-    
