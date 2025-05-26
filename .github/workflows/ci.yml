@@ -20,3 +20,5 @@ jobs:
         run: python -m unittest test_calculator.py
       - name: Run simple integration test
         run: python integration_test.py
+      - name: Run static code analysis with flake8
+        run: flake8 calculator.py test_calculator.py integration_test.py
